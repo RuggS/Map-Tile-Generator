@@ -14,6 +14,9 @@ namespace MapTileGenerator {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+
+	private: int hexLabelCount = 0;
+
 	public:
 		MyForm(void)
 		{
@@ -78,6 +81,18 @@ namespace MapTileGenerator {
 		}
 #pragma endregion
 	private: System::Void CreateTile_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Create a new TextBox
+		TextBox^ newTextBox = gcnew TextBox();
+
+		// Set the location and size of the new TextBox
+		newTextBox->Location = System::Drawing::Point(100, 150 + (hexLabelCount * 30)); // Positioning each new TextBox below the previous one
+		newTextBox->Size = System::Drawing::Size(200, 20);
+
+		// Add the new TextBox to the form's controls
+		this->Controls->Add(newTextBox);
+
+		// Increment the counter for the next TextBox
+		hexLabelCount++;
 	}
 	};
 }
