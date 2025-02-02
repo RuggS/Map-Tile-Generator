@@ -61,6 +61,6 @@ std::string hex::PrintHex() {
 	output.append(WeirdLocations[rolls[2]] + "\n");
 	output.append(getTemp(rolls[3], rolls[6]) + "\n");
 	output.append(getWind(rolls[4]) + "\n");
-	output.append(getWeather(rolls[5]));
+	output.append(getWeather(rolls[5]) + "\n\n");
 	return output;
 }
