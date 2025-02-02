@@ -38,8 +38,6 @@ std::string hex::getWeather(int weatherRoll) {
 		}
 	}
 
-
-
 hex::hex() {
 	std::random_device rd; // obtain a random number from hardware
 	std::mt19937 gen(rd()); // seed the generator
@@ -53,6 +51,12 @@ hex::hex() {
 	rolls[4] = d20(gen);
 	rolls[5] = d20(gen);
 	rolls[6] = d4(gen);
+}
+
+hex::hex(int rolls[7]){
+	for (int i = 0; i < 7; i++) {
+		hex::rolls[i] = rolls[i];
+	}
 }
 
 std::string hex::PrintHex() {

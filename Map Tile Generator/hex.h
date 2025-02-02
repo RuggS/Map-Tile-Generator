@@ -60,6 +60,8 @@ private:
 public:
 	 hex();
 
+	 hex(int rolls[7]);
+
 	std::string PrintHex();
 };
 

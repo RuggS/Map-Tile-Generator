@@ -41,6 +41,7 @@ namespace MapTileGenerator {
 		}
 	private: System::Windows::Forms::Button^ CreateTile;
 	private: System::Windows::Forms::Label^ HexDisplay;
+	private: System::Windows::Forms::Button^ Clear;
 
 
 	protected:
@@ -60,6 +61,7 @@ namespace MapTileGenerator {
 		{
 			this->CreateTile = (gcnew System::Windows::Forms::Button());
 			this->HexDisplay = (gcnew System::Windows::Forms::Label());
+			this->Clear = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// CreateTile
@@ -83,11 +85,22 @@ namespace MapTileGenerator {
 			this->HexDisplay->Size = System::Drawing::Size(200, 200);
 			this->HexDisplay->TabIndex = 2;
 			// 
+			// Clear
+			// 
+			this->Clear->Location = System::Drawing::Point(212, 12);
+			this->Clear->Name = L"Clear";
+			this->Clear->Size = System::Drawing::Size(106, 35);
+			this->Clear->TabIndex = 3;
+			this->Clear->Text = L"Clear";
+			this->Clear->UseVisualStyleBackColor = true;
+			this->Clear->Click += gcnew System::EventHandler(this, &MyForm::Clear_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(656, 398);
+			this->Controls->Add(this->Clear);
 			this->Controls->Add(this->HexDisplay);
 			this->Controls->Add(this->CreateTile);
 			this->Name = L"MyForm";
@@ -106,7 +119,10 @@ namespace MapTileGenerator {
 		HexDisplay->Text = s;
 
 	}
-	};
+	private: System::Void Clear_Click(System::Object^ sender, System::EventArgs^ e) {
+		HexDisplay->Text = "";
+	}
+};
 }
 
 
