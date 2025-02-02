@@ -59,6 +59,13 @@ hex::hex(int rolls[7]){
 	}
 }
 
+int hex::getRoll(int roll){
+	if (roll < 0 || roll >6) {
+		return 0;
+	}
+	return rolls[roll];
+}
+
 std::string hex::PrintHex() {
 	std::string output = Biome[rolls[0]] + "\n";
 	output.append(Monuments[rolls[1]] + "\n");

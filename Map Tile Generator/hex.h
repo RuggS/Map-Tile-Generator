@@ -58,9 +58,11 @@ private:
 	std::string getWeather(int weatherRoll);
 
 public:
-	 hex();
+	hex();
 
-	 hex(int rolls[7]);
+	hex(int rolls[7]);
+
+	int getRoll(int roll);
 
 	std::string PrintHex();
 };
